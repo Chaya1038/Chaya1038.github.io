@@ -1,0 +1,85 @@
+*
+{
+    margin:0;
+    padding:0;
+
+}
+.book
+{
+    background: url(boook.jpeg) no-repeat center center fixed;
+    background-size: cover;
+   
+
+}
+
+.container
+{
+    
+    color:white;
+    position:relative;
+    top:90%;
+    left:40%;
+    bottom:45%;
+   }
+   
+ #bottom {
+    position: absolute;
+    bottom: 10%;
+    left: 0;
+  }
+
+  .container h1{
+    font-size: 50px;
+    border-bottom:5px solid brown;
+    color: brown;
+     }
+
+  .box input{
+    background:none;
+    width:100%;
+    border:none;
+    outline:none;
+    font-size: 20px;
+   margin:2px 23px;
+   color: black;
+  font-family: monospace;
+   font-style: italic;
+   font-style: bold;
+   font-size: 25px;
+   }
+
+.box h3{
+    font-size: 30px;
+    color: black;
+}
+.btn
+{
+    cursor:pointer;
+    outline:none;
+    margin :0px 120px;
+    padding:6px;
+    border-radius:12px ;
+}
+
+.box i{
+    width:25px;
+    float:right;
+    text-align: center;
+    color: black;
+    cursor: pointer;
+    
+}
+
+.box{
+    width:100%;
+    border-bottom: 2px solid black;
+    
+}
+.btn:hover{
+    color:pink;
+    background-color:blue;
+}
+   
+
+    
+    

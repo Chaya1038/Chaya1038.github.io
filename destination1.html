@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="aboutus.css">
+    <title>Destinations</title>
+    <style>
+      body{
+        background-image: linear-gradient(rgb(223, 216, 223),rgb(113, 117, 201),rgb(207, 40, 104), rgb(241, 241, 241));
+      }
+    </style>
+</head>
+<!-- <body background="back12.png"> -->
+  <!-- <body background="./back13.png"> -->
+    <body>
+    
+    <style>
+      .text {
+        position: relative;
+      }
+      /* .slider  
+     {
+        width: 700px;
+        align-items: center;
+        margin-bottom:50px;
+        position:fixed;
+        border-radius: 0px ;
+        overflow: hidden;
+     }   
+     .slides
+     {
+        width: 500%;
+        height: 400px;
+        display: flex;
+     }
+    .slides input{
+        display:none;
+     }
+     .slide{
+          width: 20%;
+          transition: 2s;
+     }
+     .slide img{
+             width: 800px;
+             height: 300px;
+     } */
+     .slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom:20px;
+  width: 100%;
+  text-align: center;
+}
+.mySlides {
+  display:none;
+}
+.active-slide {
+  display:block;
+}
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor:pointer;
+  height: 13px;
+  width: 13px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+     .navigation-manual{
+        position: absolute;
+        width: 650px;
+        margin-top: -150px;
+        display: flex;
+        justify-content: center;
+     }
+     .manual-btn{
+        border: 2px solid #20c5ca  ;
+        padding:5px;
+        border-radius: 10px;
+        cursor:pointer;
+        transition:1s;
+     }
+ .manual-btn:not(:last-child){
+    margin-right: 40px;
+ }
+ .manual-btn:hover{
+    background:#40D3DC;
+ }
+ #radio1:checked ~ .first{
+    margin-left: 0;
+ }
+ #radio2:checked ~ .first{
+    margin-left: -20%;
+ }
+ #radio3:checked ~ .first{
+    margin-left: -40%;
+ }
+ #radio4:checked ~ .first{
+    margin-left: -60%;
+ } 
+.navigation-auto{
+    position: absolute;
+    display:flex;
+    width: 800px;
+    justify-content: center;
+    margin-top: 460px;
+}
+.navigation-auto div{
+    border:2px solid #26c2e4;
+    padding: 5px;
+    border-radius: 10px;
+    transition:1s;
+}
+.navigation-auto div:not(:last-child){
+    margin-right: 40px;
+}
+#radio1:checked ~.navigation-auto .auto-btn1{
+    background:#40D3DC ;
+}
+#radio2:checked ~.navigation-auto .auto-btn2{
+    background:#40D3DC ;
+}
+#radio3:checked ~.navigation-auto .auto-btn3{
+    background:#40D3DC ;
+}
+#radio4:checked ~.navigation-auto .auto-btn4{
+    background:#40D3DC ;
+}
+.wrapper
+{
+    width:1000px;
+    margin:auto;
+}
+.nav-area{
+    float: right;
+    list-style:none;
+    margin-top: 30px;
+    top:0;
+    left:0;
+}
+.nav-area li{
+    display: inline-block;
+}
+.nav-area li a{
+    color:rgba(43, 7, 25, 0.627);
+    font-size: x-large;
+    font-weight: 400;
+    top:0;
+    left:0;
+    text-decoration:none;
+    padding: 5px 20px;
+    font-family: poppins;
+    font-size:14px ;
+}
+.nav-area li a:hover{
+    background:#fff;
+    /* text-decoration:underline; */
+    color:#333;
+}
+.wrap {
+           color: rgb(109, 24, 65); 
+           font-style: oblique; 
+           font-size: 30px;
+           margin: 10px 0 0 10px;
+           white-space: nowrap;
+           overflow: hidden;
+           width: 30em;
+          /* added animation property to show the character one at a time*/
+           animation: type 4s steps(60, end); 
+           text-decoration: underline;
+        }
+ 
+        /*set the background colour of div element to black */
+        .wrapper {
+          background-color: black;
+         }
+ 
+         @keyframes type{ 
+          from { 
+               width: 0; 
+               } 
+           }
+           html {
+  scroll-behavior: smooth;
+}
+    </style>
+         <div class="content">
+         <div class="navigation-manual">
+            <label for="radio1" class="manual-btn"></label>
+            <label for="radio2" class="manual-btn"></label>
+            <label for="radio3" class="manual-btn"></label>
+            <label for="radio4" class="manual-btn"></label>
+         </div>
+    <div class="wrapper">
+    <ul class="nav-area">
+      <li><a href="Krishna.html">Home</a></li>
+      <li><a href="destination1.html">Destinations</a></li>
+      <li><a href="destination1.html#b1">Book now</a></li>
+      <li><a href="destination1.html#c1">Contact us</a></li>
+      <li><a href="https://open.spotify.com/playlist/3mNKw9kAs5j2NLSFdIZwL3?si=757183f626fe438a">Spotifyyyy</a></li>
+      <li><a href="aboutme.html">About us</a></li>
+  </ul>
+</div>
+    <br/><br/>
+    <!-- <center><h3 style="color:rgb(189, 38, 63); font-family:Verdana, Geneva, Tahoma, sans-serif; font-size:xx-large; font-weight: 700;"><u>DESTINATIONS</u></h3></center> -->
+    <!-- $(function () {
+      showText("#msg", "Destinations!", 0, 500);   
+    }); -->
+    <br/><br/>
+    <div class="wrap"><span>DESTINATIONS....Are you excited??   Let's goooo</span></div>
+    <br/>
+    <br/><br/>
+    <br/><br/>
+        <div style="display: inline-block;  margin-left: 20px;">
+      <div class="text" style="display: inline-block;"></div>
+      <div class="slideshow-container">
+        <div class="mySlides fade">
+            <div class="numbertext">1/3</div>
+            <a href="destination1.html#b1"><img src="Manali_City.jpg" width="500px" height="250px" style="display: inline-block; margin-right: 50px;  margin-left: 50px;"></a>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">2/3</div>
+            <a href="destination1.html#b1"><img src="manali1.png" width="500px" height="250px;" style="display: inline-block;  margin-right: 50px; margin-left: 50px;"></a>
+        </div>
+        <div class="mySlides fade">
+          <div class="numbertext">3/3</div>
+          <a href="destination1.html#b1"><img src="manali2.png" width="500px" height="250px;" style="display: inline-block;  margin-right: 50px; margin-left: 50px;"></a>
+      </div>
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        <div style="text-align:center">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </div> 
+     <center>
+        <span class="Rating" >⭐⭐⭐⭐</span>
+      <h2>Manali</h2>
+      <p class="cost">Rs.19500 / Per Person</p>
+      <div class="card-Box">
+          <p class="time">🕓 3 Days</p>
+          <p class="location">✈ Bangalore, Manali</p>
+      </div></center>
+</div>
+
+<div style="display: inline-block;  margin-left: 20px;">
+  <div class="text" style="display: inline-block;"></div>
+  <div class="slideshow-container">
+    <div class="mySlides fade">
+        <div class="numbertext">1/3</div>
+        <a href="destination1.html#b1"><img src="Gokarna.png" width="500px" height="250px" style="display: inline-block; margin-right: 50px;  margin-left: 50px;"></a>
+    </div>
+    <div class="mySlides fade">
+        <div class="numbertext">2/3</div>
+        <a href="destination1.html#b1"><img src="g2.png" width="500px" height="250px;" style="display: inline-block;  margin-right: 50px; margin-left: 50px;"></a>
+    </div>
+    <div class="mySlides fade">
+      <div class="numbertext">3/3</div>
+      <a href="destination1.html#b1"><img src="g1.png" width="500px" height="250px;" style="display: inline-block;  margin-right: 50px; margin-left: 50px;"></a>
+  </div>
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    <div style="text-align:center">
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </div> 
+ <center>
+    <span class="Rating" >⭐⭐⭐⭐⭐</span>
+  <h2>Gokarna</h2>
+  <p class="cost">Rs.9500 / Per Person</p>
+  <div class="card-Box">
+      <p class="time">🕓 3 Days</p>
+      <p class="location">✈ Bangalore, Goa</p>
+  </div></center>
+</div>
+<div style="display: inline-block;  margin-left: 20px;">
+  <div class="text" style="display: inline-block;"></div>
+  <div class="slideshow-container">
+    <div class="mySlides fade">
+        <div class="numbertext">1/3</div>
+        <a href="destination1.html#b1"><img src="Taj.jpg" width="500px" height="250px" style="display: inline-block; margin-top: 50px; margin-right: 50px;  margin-left: 50px;"></a>
+    </div>
+    <div class="mySlides fade">
+        <div class="numbertext">2/3</div>
+        <a href="destination1.html#b1"><img src="t1.png" width="500px" height="250px;" style="display: inline-block;  margin-right: 50px; margin-left: 50px;"></a>
+    </div>
+    <div class="mySlides fade">
+      <div class="numbertext">3/3</div>
+      <a href="destination1.html#b1"><img src="t2.png" width="500px" height="250px;" style="display: inline-block;  margin-right: 50px; margin-left: 50px;"></a>
+  </div>
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    <div style="text-align:center">
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </div> 
+ <center>
+    <span class="Rating" >⭐⭐⭐⭐⭐</span>
+  <h2>Taj Mahal, Agra</h2>
+  <p class="cost">Rs.39500 / Per Person</p>
+  <div class="card-Box">
+      <p class="time">🕓 3 Days</p>
+      <p class="location">✈ Bangalore, Agra</p>
+  </div></center>
+</div>  
+<div style="display: inline-block;  margin-left: 20px;">
+  <div class="text" style="display: inline-block;"></div>
+  <div class="slideshow-container">
+    <div class="mySlides fade">
+        <div class="numbertext">1/3</div>
+        <a href="destination1.html#b1"><img src="Shimla.png" width="500px" height="250px" style="display: inline-block; margin-right: 50px;  margin-left: 50px;"></a>
+    </div>
+    <div class="mySlides fade">
+        <div class="numbertext">2/3</div>
+        <a href="destination1.html#b1"><img src="s1.png" width="500px" height="250px;" style="display: inline-block;  margin-right: 50px; margin-left: 50px;"></a>
+    </div>
+    <div class="mySlides fade">
+      <div class="numbertext">3/3</div>
+      <a href="destination1.html#b1"><img src="s2.png" width="500px" height="250px;" style="display: inline-block;  margin-right: 50px; margin-left: 50px;"></a>
+  </div>
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    <div style="text-align:center">
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </div> 
+ <center>
+    <span class="Rating" >⭐⭐⭐⭐</span>
+  <h2>Shimla</h2>
+  <p class="cost">Rs.49500 / Per Person</p>
+  <div class="card-Box">
+      <p class="time">🕓 3 Days</p>
+      <p class="location">✈ Bangalore, Chandigarh</p>
+  </div></center>
+</div>  
+</div>
+<div style="display: inline-block;  margin-left: 20px;">
+  <div class="text" style="display: inline-block;"></div>
+  <div class="slideshow-container">
+    <div class="mySlides fade">
+        <div class="numbertext">1/3</div>
+        <a href="destination1.html#b1"><img src="Hyderabad.png" width="500px" height="250px" style="display: inline-block; margin-top: 50px; margin-right: 50px;  margin-left: 50px;"></a>
+    </div>
+    <div class="mySlides fade">
+        <div class="numbertext">2/3</div>
+        <a href="destination1.html#b1"><img src="h1.png" width="500px" height="250px;" style="display: inline-block;  margin-right: 50px; margin-left: 50px;"></a>
+    </div>
+    <div class="mySlides fade">
+      <div class="numbertext">3/3</div>
+      <a href="destination1.html#b1"><img src="h2.png" width="500px" height="250px;" style="display: inline-block;  margin-right: 50px; margin-left: 50px;"></a>
+  </div>
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    <div style="text-align:center">
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </div> 
+ <center>
+    <span class="Rating" >⭐⭐⭐⭐</span>
+  <h2>Hyderabad</h2>
+  <p class="cost">Rs.20500 / Per Person</p>
+  <div class="card-Box">
+      <p class="time">🕓 3 Days</p>
+      <p class="location">✈ Bangalore, Hyderabad</p>
+  </div></center>
+</div>  
+</div>
+<div style="display: inline-block;  margin-left: 20px;">
+  <div class="text" style="display: inline-block;"></div>
+  <div class="slideshow-container">
+    <div class="mySlides fade">
+        <div class="numbertext">1/3</div>
+        <a href="destination1.html#b1"><img src="jaipur.png" width="500px" height="250px" style="display: inline-block; margin-right: 50px;  margin-left: 50px;"></a>
+    </div>
+    <div class="mySlides fade">
+        <div class="numbertext">2/3</div>
+        <a href="destination1.html#b1"><img src="j1.png" width="500px" height="250px;" style="display: inline-block;  margin-right: 50px; margin-left: 50px;"></a>
+    </div>
+    <div class="mySlides fade">
+      <div class="numbertext">3/3</div>
+      <a href="destination1.html#b1"><img src="j2.png" width="500px" height="250px;" style="display: inline-block;  margin-right: 50px; margin-left: 50px;"></a>
+  </div>
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    <div style="text-align:center">
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </div> 
+ <center>
+    <span class="Rating" >⭐⭐⭐⭐</span>
+  <h2>Jaipur, The Pink City</h2>
+  <p class="cost">Rs.15699 / Per Person</p>
+  <div class="card-Box">
+      <p class="time">🕓 3 Days</p>
+      <p class="location">✈ Bangalore, Jaipur</p>
+  </div></center>
+</div>  
+</div>
+<div style="display: inline-block;  margin-left: 20px;">
+  <div class="text" style="display: inline-block;"></div>
+  <div class="slideshow-container">
+    <div class="mySlides fade">
+        <div class="numbertext">1/3</div>
+        <a href="destination1.html#b1"><img src="Varanasi.png" width="500px" height="250px" style="display: inline-block; margin-top: 50px; margin-right: 50px;  margin-left: 50px;"></a>
+    </div>
+    <div class="mySlides fade">
+        <div class="numbertext">2/3</div>
+        <a href="destination1.html#b1"><img src="v1.png" width="500px" height="250px;" style="display: inline-block;  margin-right: 50px; margin-left: 50px;"></a>
+    </div>
+    <div class="mySlides fade">
+      <div class="numbertext">3/3</div>
+      <a href="destination1.html#b1"><img src="v2.png" width="500px" height="250px;" style="display: inline-block;  margin-right: 50px; margin-left: 50px;"></a>
+  </div>
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    <div style="text-align:center">
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </div> 
+ <center>
+    <span class="Rating" >⭐⭐⭐⭐</span>
+  <h2>Varanasi</h2>
+  <p class="cost">Rs.28649 / Per Person</p>
+  <div class="card-Box">
+      <p class="time">🕓 3 Days</p>
+      <p class="location">✈ Bangalore, Varanasi</p>
+  </div></center>
+</div>  
+</div>
+<div style="display: inline-block;  margin-left: 20px;">
+  <div class="text" style="display: inline-block;"></div>
+  <div class="slideshow-container">
+    <div class="mySlides fade">
+        <div class="numbertext">1/3</div>
+        <a href="destination1.html#b1"><img src="Amritsar.png" width="500px" height="250px" style="display: inline-block; margin-right: 50px;  margin-left: 50px;"></a>
+    </div>
+    <div class="mySlides fade">
+        <div class="numbertext">2/3</div>
+        <a href="destination1.html#b1"><img src="g1.png" width="500px" height="250px;" style="display: inline-block;  margin-right: 50px; margin-left: 50px;"></a>
+    </div>
+    <div class="mySlides fade">
+      <div class="numbertext">3/3</div>
+      <a href="destination1.html#b1"><img src="g3.png" width="500px" height="250px;" style="display: inline-block;  margin-right: 50px; margin-left: 50px;"></a>
+  </div>
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    <div style="text-align:center">
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </div> 
+ <center>
+    <span class="Rating" >⭐⭐⭐⭐⭐</span>
+  <h2>The Golden Temple of Amritsar</h2>
+  <p class="cost">Rs.10699 / Per Person</p>
+  <div class="card-Box">
+      <p class="time">🕓 3 Days</p>
+      <p class="location">✈ Bangalore, Amritsar</p>
+  </div>
+</center>
+</div>  
+</div>
+
+  <!-- <script>  
+@media (max-width: 750px) {
+    #myVideo 
+    { display: none; }
+    body 
+    {
+      background: url("https://assets.codepen.io/6093409/river.jpg") no-repeat;
+      background-size: cover;
+    }
+}
+</script> -->
+<br>
+<br>
+<div class="book" id="b1">
+    <head>
+ <script src="https://kit.fontawesome.com/0c714f7194.js" crossorigin="anonymous"></script>
+ <link rel="stylesheet" href="booking.css">
+    </head>
+    <body 
+    background="url(back14.png) no-repeat center center relative";  >
+    <div class="container">
+        <div id="bottom">
+        <h1><pre>  BOOK NOW</pre></h1>
+        
+        <div class="box">
+         <h3><pre>         From</pre></h3>
+        
+      <i class="fa-solid fa-plane"></i>
+      <input type="text" name="where to" id="where to"><br>
+           </div><br>
+
+        <div class="box">
+            <h3><pre>          To</pre></h3><br>
+            <i class="fa-solid fa-people"></i>
+            <input type="text" name="how many" id="how many"><br>
+
+        </div>
+        
+
+        <div class="box">
+            <h3><pre>        Departure</pre></h3><br>
+            
+            <input type="date" name="arrivals" id="leaving" placeholder="dd/mm/yy"><br>
+            
+        </div>
+        
+
+        <div class="box">
+            <h3><pre>        Return</pre></h3><br>
+            
+            <input type="date" name="leaving" id="leaving" placeholder="dd/mm/yy">
+        </div>
+        <br>
+        <br>   
+ <button class="btn">Book Now </button>
+</div>
+ <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+ <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> 
+</div>
+</body>
+</div>
+</script>
+<script>
+// var showText = function (target, message, index, interval) {   
+//   if (index < message.length) {
+//     $(target).append(message[index++]);
+//     setTimeout(function () { showText(target, message, index, interval); }, interval);
+//   }
+// }
+// {this.props.copy.split("").map(function(char, index){
+//     const style = {"animation-delay": (0.5 + index / 10) + "s"};
+//     return <span
+//         aria-hidden="true"
+//         key={index}
+//         style={style}>
+//         {char}
+//     </span>;
+// })}
+// var spanWidth = $('#test span').width();
+// $('#text1').animate( { width: spanWidth }, 50000 );
+// </script> 
+<script src="aboutus.js"></script>
+
+  <div class="Contact Us" id="cu">
+    <head>
+<link rel="stylesheet" type="text/css" href="contact.css">
+</head>
+<style>
+  body{
+        background-image: linear-gradient(rgb(223, 216, 223),rgb(113, 117, 201),rgb(207, 40, 104), rgb(241, 241, 241));
+      }
+</style>
+<body>
+  <div class="contact" id="c1">
+     <form>
+      <h1>Contact Us</h1>
+  
+    <input type="text" id="name" placeholder="First Name" required>
+    <input type="text" id="name" placeholder="Last Name" required>
+    <input type="email" id="email" placeholder="Email" required>
+    <input type="text" id="number" placeholder="Mobile" required>
+    <h4>Type your message here</h4>
+    <textarea required></textarea>
+    <input type="submit" value="Send" id="button">
+    </form>
+</div>
+</script>
+<script src="aboutus.js"></script>
+</body>
+</html>
